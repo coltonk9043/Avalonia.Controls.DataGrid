@@ -1,7 +1,6 @@
-<img src='https://avatars2.githubusercontent.com/u/14075148?s=200&v=4' width='100' />
+[![NuGet](https://img.shields.io/nuget/v/Avalonia.Controls.DataGrid.svg)](https://www.nuget.org/packages/Avalonia.Controls.DataGrid/)
 
-# Avalonia DataGrid
+# Avalonia `DataGrid`
 
-This is a port of the Silverlight DataGrid Control to Avalonia.
-
-**The Avalonia DataGrid is currently in alpha** which means it is not yet ready for use in production applications, the API is still being revised, and it is dependent upon the nightly Avalonia builds.
+The `DataGrid` control was initially ported from Silverlight, and was previously part of the [Avalonia main repository](https://github.com/AvaloniaUI/Avalonia).  
+It now lives in the current repository: see [this discussion](https://github.com/AvaloniaUI/Avalonia/discussions/18388) for details.

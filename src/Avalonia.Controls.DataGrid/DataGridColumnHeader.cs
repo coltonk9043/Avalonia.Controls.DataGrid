@@ -726,7 +726,9 @@ namespace Avalonia.Controls
             }
         }
 
-        private object GetDragIndicatorContent(object content, IDataTemplate? dataTemplate)
+#nullable enable
+
+        private object? GetDragIndicatorContent(object? content, IDataTemplate? dataTemplate)
         {
             if (content is ContentControl icc)
             {
@@ -755,6 +757,8 @@ namespace Avalonia.Controls
             }
             return content;
         }
+
+#nullable restore
 
         //TODO DragEvents
         private void OnMouseMove_Reorder(ref bool handled, Point mousePosition, Point mousePositionHeaders)

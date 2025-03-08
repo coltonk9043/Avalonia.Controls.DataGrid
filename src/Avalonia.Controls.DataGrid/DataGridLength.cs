@@ -10,7 +10,10 @@ using System.Globalization;
 
 namespace Avalonia.Controls
 {
-    public enum DataGridLengthUnitType
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    enum DataGridLengthUnitType
     {
         Auto = 0,
         Pixel = 1,
@@ -23,7 +26,10 @@ namespace Avalonia.Controls
     /// Represents the lengths of elements within the <see cref="T:Avalonia.Controls.DataGrid" /> control.
     /// </summary>
     [TypeConverter(typeof(DataGridLengthConverter))]
-    public struct DataGridLength : IEquatable<DataGridLength>
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    struct DataGridLength : IEquatable<DataGridLength>
     {
 
         private double _desiredValue;   //  desired value storage
@@ -344,10 +350,14 @@ namespace Avalonia.Controls
         }
 
     }
+
     /// <summary>
     /// DataGridLengthConverter - Converter class for converting instances of other types to and from DataGridLength instances.
     /// </summary> 
-    public class DataGridLengthConverter : TypeConverter
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridLengthConverter : TypeConverter
     {
         private static string _starSuffix = "*";
         private static string[] _valueInvariantUnitStrings = { "auto", "sizetocells", "sizetoheader" };

@@ -13,7 +13,10 @@ using System.Text;
 namespace Avalonia.Collections
 {
     /// <summary>Provides data for the <see cref="E:Avalonia.Collections.ICollectionView.CurrentChanging" /> event.</summary>
-    public class DataGridCurrentChangingEventArgs : EventArgs
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridCurrentChangingEventArgs : EventArgs
     {
         private bool _cancel;
         private bool _isCancelable;
@@ -66,7 +69,10 @@ namespace Avalonia.Collections
     }
 
     /// <summary>Enables collections to have the functionalities of current record management, custom sorting, filtering, and grouping.</summary>
-    public interface IDataGridCollectionView : IEnumerable, INotifyCollectionChanged
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    interface IDataGridCollectionView : IEnumerable, INotifyCollectionChanged
     {
         /// <summary>Gets or sets the cultural information for any operations of the view that may differ by culture, such as sorting.</summary>
         /// <returns>The culture information to use during culture-sensitive operations. </returns>
@@ -172,6 +178,7 @@ namespace Avalonia.Collections
         /// <summary>Occurs after the current item has been changed.</summary>
         event EventHandler CurrentChanged;
     }
+
     internal interface IDataGridEditableCollectionView
     {
         /// <summary>Gets a value that indicates whether a new item can be added to the collection.</summary>

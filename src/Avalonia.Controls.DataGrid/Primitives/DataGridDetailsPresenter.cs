@@ -16,7 +16,10 @@ namespace Avalonia.Controls.Primitives
     /// Used within the template of a <see cref="T:Avalonia.Controls.DataGrid" /> to specify the location in the control's visual tree 
     /// where the row details are to be added.
     /// </summary>
-    public sealed class DataGridDetailsPresenter : Panel
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    sealed class DataGridDetailsPresenter : Panel
     {
         public static readonly StyledProperty<double> ContentHeightProperty =
             AvaloniaProperty.Register<DataGridDetailsPresenter, double>(nameof(ContentHeight));

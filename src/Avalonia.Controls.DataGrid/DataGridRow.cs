@@ -30,7 +30,10 @@ namespace Avalonia.Controls
     [TemplatePart(DATAGRIDROW_elementRoot,           typeof(Panel))]
     [TemplatePart(DATAGRIDROW_elementRowHeader,      typeof(DataGridRowHeader))]
     [PseudoClasses(":selected", ":editing", ":invalid")]
-    public class DataGridRow : TemplatedControl
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridRow : TemplatedControl
     {
 
         private const byte DATAGRIDROW_defaultMinHeight = 0;

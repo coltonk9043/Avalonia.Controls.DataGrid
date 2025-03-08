@@ -16,7 +16,10 @@ using Avalonia.Layout;
 
 namespace Avalonia.Controls
 {
-    public partial class DataGrid
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    partial class DataGrid
     {
 
         protected virtual void OnColumnDisplayIndexChanged(DataGridColumnEventArgs e)

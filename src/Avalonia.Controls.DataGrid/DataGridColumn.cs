@@ -20,7 +20,10 @@ using Avalonia.VisualTree;
 
 namespace Avalonia.Controls
 {
-    public abstract class DataGridColumn : AvaloniaObject
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    abstract class DataGridColumn : AvaloniaObject
     {
         internal const int DATAGRIDCOLUMN_maximumWidth = 65536;
         private const bool DATAGRIDCOLUMN_defaultIsReadOnly = false;

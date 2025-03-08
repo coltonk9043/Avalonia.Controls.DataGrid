@@ -26,7 +26,10 @@ namespace Avalonia.Controls
     /// Represents an individual <see cref="T:Avalonia.Controls.DataGrid" /> column header.
     /// </summary>
     [PseudoClasses(":dragIndicator", ":pressed", ":sortascending", ":sortdescending")]
-    public class DataGridColumnHeader : ContentControl
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridColumnHeader : ContentControl
     {
         private enum DragMode
         {

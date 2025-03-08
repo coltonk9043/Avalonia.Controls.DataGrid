@@ -8,7 +8,10 @@ using Avalonia.Controls.Utils;
 
 namespace Avalonia.Collections
 {
-    public abstract class DataGridSortDescription
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    abstract class DataGridSortDescription
     {
         public virtual string PropertyPath => null;
 
@@ -287,7 +290,10 @@ namespace Avalonia.Collections
         }
     }
 
-    public class DataGridComparerSortDescription : DataGridSortDescription
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridComparerSortDescription : DataGridSortDescription
     {
         private readonly IComparer _innerComparer;
         private readonly ListSortDirection _direction;
@@ -319,6 +325,9 @@ namespace Avalonia.Collections
         }
     }
 
-    public class DataGridSortDescriptionCollection : AvaloniaList<DataGridSortDescription>
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridSortDescriptionCollection : AvaloniaList<DataGridSortDescription>
     { }
 }

@@ -19,7 +19,11 @@ using Avalonia.Utilities;
 
 namespace Avalonia.Collections
 {
-    public abstract class DataGridGroupDescription : INotifyPropertyChanged
+#if !DATAGRID_INTERNAL
+    public
+#endif
+
+    abstract class DataGridGroupDescription : INotifyPropertyChanged
     {
         public AvaloniaList<object> GroupKeys { get; }
 
@@ -54,7 +58,11 @@ namespace Avalonia.Collections
             return object.Equals(groupKey, itemKey);
         }
     }
-    public class DataGridPathGroupDescription : DataGridGroupDescription
+
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridPathGroupDescription : DataGridGroupDescription
     {
         private string _propertyPath;
         private Type _propertyType;
@@ -117,7 +125,10 @@ namespace Avalonia.Collections
         }
     }
 
-    public abstract class DataGridCollectionViewGroup : INotifyPropertyChanged
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    abstract class DataGridCollectionViewGroup : INotifyPropertyChanged
     {
         private int _itemCount;
 
@@ -162,6 +173,7 @@ namespace Avalonia.Collections
             PropertyChanged?.Invoke(this, e);
         }
     }
+
     internal class DataGridCollectionViewGroupInternal : DataGridCollectionViewGroup
     {
         /// <summary>

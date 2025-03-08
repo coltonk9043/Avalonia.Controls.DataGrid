@@ -19,7 +19,10 @@ using Avalonia.Styling;
 
 namespace Avalonia.Controls
 {
-    public partial class DataGrid
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    partial class DataGrid
     {
 
         internal bool AreRowBottomGridLinesRequired

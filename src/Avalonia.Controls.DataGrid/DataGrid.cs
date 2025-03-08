@@ -45,7 +45,10 @@ namespace Avalonia.Controls
     [TemplatePart(DATAGRID_elementTopRightCornerHeaderName,        typeof(ContentControl))]
     [TemplatePart(DATAGRID_elementVerticalScrollbarName,           typeof(ScrollBar))]
     [PseudoClasses(":invalid", ":empty-rows", ":empty-columns")]
-    public partial class DataGrid : TemplatedControl
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    partial class DataGrid : TemplatedControl
     {
         private const string DATAGRID_elementRowsPresenterName = "PART_RowsPresenter";
         private const string DATAGRID_elementColumnHeadersPresenterName = "PART_ColumnHeadersPresenter";

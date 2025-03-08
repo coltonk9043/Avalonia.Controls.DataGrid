@@ -18,7 +18,10 @@ namespace Avalonia.Controls
     /// </summary>
     [TemplatePart(DATAGRIDCELL_elementRightGridLine, typeof(Rectangle))]
     [PseudoClasses(":selected", ":current", ":edited", ":invalid", ":focus")]
-    public class DataGridCell : ContentControl
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridCell : ContentControl
     {
         private const string DATAGRIDCELL_elementRightGridLine = "PART_RightGridLine";
 

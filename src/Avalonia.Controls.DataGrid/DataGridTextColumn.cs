@@ -18,7 +18,10 @@ namespace Avalonia.Controls
     /// <summary>
     /// Represents a <see cref="T:Avalonia.Controls.DataGrid" /> column that hosts textual content in its cells.
     /// </summary>
-    public class DataGridTextColumn : DataGridBoundColumn
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridTextColumn : DataGridBoundColumn
     {
         private readonly Lazy<ControlTheme> _cellTextBoxTheme;
         private readonly Lazy<ControlTheme> _cellTextBlockTheme;

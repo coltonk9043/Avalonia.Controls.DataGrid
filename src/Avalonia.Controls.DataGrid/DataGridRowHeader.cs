@@ -16,7 +16,10 @@ namespace Avalonia.Controls.Primitives
     /// </summary>
     [TemplatePart(DATAGRIDROWHEADER_elementRootName, typeof(Control))]
     [PseudoClasses(":invalid", ":selected", ":editing", ":current")]
-    public class DataGridRowHeader : ContentControl
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridRowHeader : ContentControl
     {
         private const string DATAGRIDROWHEADER_elementRootName = "PART_Root";
         private Control _rootElement;

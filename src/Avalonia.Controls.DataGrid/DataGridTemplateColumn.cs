@@ -13,7 +13,10 @@ using Avalonia.Utilities;
 
 namespace Avalonia.Controls
 {
-    public class DataGridTemplateColumn : DataGridColumn
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridTemplateColumn : DataGridColumn
     {
         private IDataTemplate _cellTemplate;
 

@@ -5,7 +5,10 @@ using System.Collections.Generic;
 
 namespace Avalonia.Controls.Utils
 {
-    public interface ICellEditBinding
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    interface ICellEditBinding
     {
         bool IsValid { get; }
         IEnumerable<Exception> ValidationErrors { get; }

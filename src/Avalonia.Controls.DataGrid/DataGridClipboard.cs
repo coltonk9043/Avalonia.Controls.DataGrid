@@ -11,7 +11,10 @@ namespace Avalonia.Controls
     /// <summary>
     /// Defines modes that indicates how DataGrid content is copied to the Clipboard. 
     /// </summary>
-    public enum DataGridClipboardCopyMode
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    enum DataGridClipboardCopyMode
     {
         /// <summary>
         /// Disable the DataGrid's ability to copy selected items as text.
@@ -34,7 +37,10 @@ namespace Avalonia.Controls
     /// <summary>
     /// This structure encapsulate the cell information necessary when clipboard content is prepared.
     /// </summary>
-    public struct DataGridClipboardCellContent
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    struct DataGridClipboardCellContent
     {
 
         private DataGridColumn _column;
@@ -144,7 +150,10 @@ namespace Avalonia.Controls
     /// <summary>
     /// This class encapsulates a selected row's information necessary for the CopyingRowClipboardContent event.
     /// </summary>
-    public class DataGridRowClipboardEventArgs : EventArgs
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridRowClipboardEventArgs : EventArgs
     {
 
         private List<DataGridClipboardCellContent> _clipboardRowContent;

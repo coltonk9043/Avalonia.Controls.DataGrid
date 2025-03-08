@@ -22,7 +22,10 @@ namespace Avalonia.Collections
     /// Event argument used for page index change notifications. The requested page move
     /// can be canceled by setting e.Cancel to True.
     /// </summary>
-    public sealed class PageChangingEventArgs : CancelEventArgs
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    sealed class PageChangingEventArgs : CancelEventArgs
     {
         /// <summary>
         /// Constructor that takes the target page index
@@ -44,7 +47,10 @@ namespace Avalonia.Collections
     }
 
     /// <summary>Defines a method that enables a collection to provide a custom view for specialized sorting, filtering, grouping, and currency.</summary>
-    public interface IDataGridCollectionViewFactory
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    interface IDataGridCollectionViewFactory
     {
         /// <summary>Returns a custom view for specialized sorting, filtering, grouping, and currency.</summary>
         /// <returns>A custom view for specialized sorting, filtering, grouping, and currency.</returns>
@@ -54,7 +60,10 @@ namespace Avalonia.Collections
     /// <summary>
     /// DataGrid-readable view over an IEnumerable.
     /// </summary>
-    public sealed class DataGridCollectionView : IDataGridCollectionView, IDataGridEditableCollectionView, IList, INotifyPropertyChanged 
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    sealed class DataGridCollectionView : IDataGridCollectionView, IDataGridEditableCollectionView, IList, INotifyPropertyChanged
     {
         /// <summary>
         /// Since there's nothing in the un-cancelable event args that is mutable,

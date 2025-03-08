@@ -15,7 +15,10 @@ namespace Avalonia.Controls
     /// Represents a <see cref="T:System.Windows.Controls.DataGrid" /> column that hosts 
     /// <see cref="T:System.Windows.Controls.CheckBox" /> controls in its cells.
     /// </summary>
-    public class DataGridCheckBoxColumn : DataGridBoundColumn
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridCheckBoxColumn : DataGridBoundColumn
     {
         private CheckBox _currentCheckBox;
         private DataGrid _owningGrid;

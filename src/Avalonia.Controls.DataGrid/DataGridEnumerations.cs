@@ -10,7 +10,10 @@ namespace Avalonia.Controls
     /// <summary>
     /// Used to specify action to take out of edit mode.
     /// </summary>
-    public enum DataGridEditAction
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    enum DataGridEditAction
     {
         /// <summary>
         /// Cancel the changes.
@@ -35,7 +38,10 @@ namespace Avalonia.Controls
     /// Determines whether the inner cells' vertical/horizontal gridlines are shown or not.
     /// </summary>
     [Flags]
-    public enum DataGridGridLinesVisibility
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    enum DataGridGridLinesVisibility
     {
         None = 0,
         Horizontal = 1,
@@ -43,7 +49,10 @@ namespace Avalonia.Controls
         All = 3,
     }
 
-    public enum DataGridEditingUnit
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    enum DataGridEditingUnit
     {
         Cell = 0,
         Row = 1,
@@ -53,7 +62,10 @@ namespace Avalonia.Controls
     /// Determines whether the row/column headers are shown or not.
     /// </summary>
     [Flags]
-    public enum DataGridHeadersVisibility
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    enum DataGridHeadersVisibility
     {
         /// <summary>
         /// Show Row, Column, and Corner Headers
@@ -76,7 +88,10 @@ namespace Avalonia.Controls
         None = 0x00
     }
 
-    public enum DataGridRowDetailsVisibilityMode
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    enum DataGridRowDetailsVisibilityMode
     {
         Collapsed = 2,          // Show no details.  Developer is in charge of toggling visibility.
         Visible = 1,	        // Show the details section for all rows.
@@ -98,7 +113,10 @@ namespace Avalonia.Controls
     /// <summary>
     /// Determines the selection model
     /// </summary>
-    public enum DataGridSelectionMode
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    enum DataGridSelectionMode
     {
         Extended = 0,
         Single = 1

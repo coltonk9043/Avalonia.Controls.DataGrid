@@ -16,7 +16,10 @@ namespace Avalonia.Controls
     /// Represents a <see cref="T:Avalonia.Controls.DataGrid" /> column that can 
     /// bind to a property in the grid's data source.
     /// </summary>
-    public abstract class DataGridBoundColumn : DataGridColumn
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    abstract class DataGridBoundColumn : DataGridColumn
     {
         private IBinding _binding; 
 

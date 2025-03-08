@@ -14,7 +14,10 @@ namespace Avalonia.Controls
     /// <summary>
     /// Provides data for the <see cref="E:Avalonia.Controls.DataGrid.AutoGeneratingColumn" /> event. 
     /// </summary>
-    public class DataGridAutoGeneratingColumnEventArgs : CancelEventArgs
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridAutoGeneratingColumnEventArgs : CancelEventArgs
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="T:Avalonia.Controls.DataGridAutoGeneratingColumnEventArgs" /> class.
@@ -66,7 +69,10 @@ namespace Avalonia.Controls
     /// <summary>
     /// Provides data for the <see cref="E:Avalonia.Controls.DataGrid.BeginningEdit" /> event.
     /// </summary>
-    public class DataGridBeginningEditEventArgs : CancelEventArgs
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridBeginningEditEventArgs : CancelEventArgs
     {
         /// <summary>
         /// Initializes a new instance of the 
@@ -122,7 +128,10 @@ namespace Avalonia.Controls
     /// <summary>
     /// Provides information just after a cell has exited editing mode.
     /// </summary>
-    public class DataGridCellEditEndedEventArgs : EventArgs
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridCellEditEndedEventArgs : EventArgs
     {
         /// <summary>
         /// Instantiates a new instance of this class.
@@ -169,7 +178,10 @@ namespace Avalonia.Controls
     /// <summary>
     /// Provides information after the cell has been pressed.
     /// </summary>
-    public class DataGridCellPointerPressedEventArgs : EventArgs
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridCellPointerPressedEventArgs : EventArgs
     {
         /// <summary>
         /// Instantiates a new instance of this class.
@@ -213,7 +225,10 @@ namespace Avalonia.Controls
     /// <summary>
     /// Provides information just before a cell exits editing mode.
     /// </summary>
-    public class DataGridCellEditEndingEventArgs : CancelEventArgs
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridCellEditEndingEventArgs : CancelEventArgs
     {
         /// <summary>
         /// Instantiates a new instance of this class.
@@ -289,7 +304,10 @@ namespace Avalonia.Controls
     /// <summary>
     /// Provides data for <see cref="T:Avalonia.Controls.DataGrid" /> column-related events.
     /// </summary>
-    public class DataGridColumnEventArgs : HandledEventArgs
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridColumnEventArgs : HandledEventArgs
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="T:Avalonia.Controls.DataGridColumnEventArgs" /> class.
@@ -313,7 +331,10 @@ namespace Avalonia.Controls
     /// <summary>
     /// Provides data for the <see cref="E:Avalonia.Controls.DataGrid.ColumnReordering" /> event.
     /// </summary>
-    public class DataGridColumnReorderingEventArgs : CancelEventArgs
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridColumnReorderingEventArgs : CancelEventArgs
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="T:Avalonia.Controls.DataGridColumnReorderingEventArgs" /> class.
@@ -355,7 +376,10 @@ namespace Avalonia.Controls
     /// <summary>
     /// Provides data for <see cref="T:Avalonia.Controls.DataGrid" /> row-related events.
     /// </summary>
-    public class DataGridRowEventArgs : EventArgs
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridRowEventArgs : EventArgs
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="T:Avalonia.Controls.DataGridRowEventArgs" /> class.
@@ -379,7 +403,10 @@ namespace Avalonia.Controls
     /// <summary>
     /// Provides information just before a row exits editing mode.
     /// </summary>
-    public class DataGridRowEditEndingEventArgs : CancelEventArgs
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridRowEditEndingEventArgs : CancelEventArgs
     {
         /// <summary>
         /// Instantiates a new instance of this class.
@@ -414,7 +441,10 @@ namespace Avalonia.Controls
     /// <summary>
     /// Provides information just after a row has exited edit mode.
     /// </summary>
-    public class DataGridRowEditEndedEventArgs : EventArgs
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridRowEditEndedEventArgs : EventArgs
     {
         /// <summary>
         /// Instantiates a new instance of this class.
@@ -449,7 +479,10 @@ namespace Avalonia.Controls
     /// <summary>
     /// Provides data for the <see cref="E:Avalonia.Controls.DataGrid.PreparingCellForEdit" /> event.
     /// </summary>
-    public class DataGridPreparingCellForEditEventArgs : EventArgs
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridPreparingCellForEditEventArgs : EventArgs
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="T:Avalonia.Controls.DataGridPreparingCellForEditEventArgs" /> class.
@@ -510,7 +543,10 @@ namespace Avalonia.Controls
     /// <summary>
     /// EventArgs used for the DataGrid's LoadingRowGroup and UnloadingRowGroup events
     /// </summary>
-    public class DataGridRowGroupHeaderEventArgs : EventArgs
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridRowGroupHeaderEventArgs : EventArgs
     {
         /// <summary>
         /// Constructs a DataGridRowGroupHeaderEventArgs instance
@@ -535,7 +571,10 @@ namespace Avalonia.Controls
     /// Provides data for the <see cref="E:Avalonia.Controls.DataGrid.LoadingRowDetails" />, <see cref="E:Avalonia.Controls.DataGrid.UnloadingRowDetails" />, 
     /// and <see cref="E:Avalonia.Controls.DataGrid.RowDetailsVisibilityChanged" /> events.
     /// </summary>
-    public class DataGridRowDetailsEventArgs : EventArgs
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    class DataGridRowDetailsEventArgs : EventArgs
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="T:Avalonia.Controls.DataGridRowDetailsEventArgs" /> class. 

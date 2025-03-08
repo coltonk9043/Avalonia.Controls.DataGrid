@@ -3,7 +3,10 @@ using Avalonia.Controls.Primitives;
 
 namespace Avalonia.Controls.Automation.Peers;
 
-public class DataGridColumnHeadersPresenterAutomationPeer : ControlAutomationPeer
+#if !DATAGRID_INTERNAL
+public
+#endif
+class DataGridColumnHeadersPresenterAutomationPeer : ControlAutomationPeer
 {
     public DataGridColumnHeadersPresenterAutomationPeer(DataGridColumnHeadersPresenter owner)
         : base(owner)

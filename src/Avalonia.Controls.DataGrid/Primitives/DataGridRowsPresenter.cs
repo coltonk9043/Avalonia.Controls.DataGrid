@@ -17,7 +17,10 @@ namespace Avalonia.Controls.Primitives
     /// Used within the template of a <see cref="T:Avalonia.Controls.DataGrid" /> to specify the
     /// location in the control's visual tree where the rows are to be added.
     /// </summary>
-    public sealed class DataGridRowsPresenter : Panel, IChildIndexProvider
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    sealed class DataGridRowsPresenter : Panel, IChildIndexProvider
     {
         private EventHandler<ChildIndexChangedEventArgs> _childIndexChanged;
 

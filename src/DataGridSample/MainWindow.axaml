@@ -1,0 +1,13 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:DataGridSample"
+        x:Class="DataGridSample.MainWindow"
+        Title="Avalonia DataGrid"
+        Width="800"
+        Height="600"
+        WindowStartupLocation="CenterScreen">
+
+  <local:DataGridPage Margin="8" />
+
+</Window>
+

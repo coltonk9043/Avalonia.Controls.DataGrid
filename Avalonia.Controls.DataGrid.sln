@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avalonia.Controls.DataGrid.UnitTests", "src\Avalonia.Controls.DataGrid.UnitTests\Avalonia.Controls.DataGrid.UnitTests.csproj", "{91F13463-94A3-4635-96A2-EBB8A7D899DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridSample", "src\DataGridSample\DataGridSample.csproj", "{3F8265C6-4520-4E48-BFEC-F73E20F6EEDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,5 +28,9 @@ Global
 		{91F13463-94A3-4635-96A2-EBB8A7D899DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91F13463-94A3-4635-96A2-EBB8A7D899DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91F13463-94A3-4635-96A2-EBB8A7D899DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F8265C6-4520-4E48-BFEC-F73E20F6EEDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F8265C6-4520-4E48-BFEC-F73E20F6EEDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F8265C6-4520-4E48-BFEC-F73E20F6EEDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F8265C6-4520-4E48-BFEC-F73E20F6EEDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

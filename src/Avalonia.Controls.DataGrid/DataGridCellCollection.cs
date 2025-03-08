@@ -15,8 +15,8 @@ namespace Avalonia.Controls
         private List<DataGridCell> _cells;
         private DataGridRow _owningRow;
 
-        internal event EventHandler<DataGridCellEventArgs> CellAdded;
-        internal event EventHandler<DataGridCellEventArgs> CellRemoved;
+        internal event EventHandler<DataGridCellEventArgs>? CellAdded;
+        internal event EventHandler<DataGridCellEventArgs>? CellRemoved;
 
         public DataGridCellCollection(DataGridRow owningRow)
         {
@@ -40,7 +40,6 @@ namespace Avalonia.Controls
         public void Insert(int cellIndex, DataGridCell cell)
         {
             Debug.Assert(cellIndex >= 0 && cellIndex <= _cells.Count);
-            Debug.Assert(cell != null);
 
             cell.OwningRow = _owningRow;
             _cells.Insert(cellIndex, cell);

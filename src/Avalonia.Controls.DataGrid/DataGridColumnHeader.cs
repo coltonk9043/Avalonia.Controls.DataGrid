@@ -3,6 +3,8 @@
 // Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
 // All other rights reserved.
 
+#nullable disable
+
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -761,7 +763,7 @@ namespace Avalonia.Controls
             return content;
         }
 
-#nullable restore
+#nullable disable
 
         //TODO DragEvents
         private void OnMouseMove_Reorder(ref bool handled, Point mousePosition, Point mousePositionHeaders)

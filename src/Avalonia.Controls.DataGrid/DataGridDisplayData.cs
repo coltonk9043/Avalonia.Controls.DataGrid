@@ -86,7 +86,7 @@ namespace Avalonia.Controls
             _recyclableRows.Push(row);
         }
 
-        internal DataGridRowGroupHeader GetUsedGroupHeader()
+        internal DataGridRowGroupHeader? GetUsedGroupHeader()
         {
             if (_recyclableGroupHeaders.Count > 0)
             {
@@ -179,7 +179,6 @@ namespace Avalonia.Controls
             }
             else if ((_owner.GetPreviousVisibleSlot(slot) <= LastScrollingSlot) || (LastScrollingSlot == -1))
             {
-                Debug.Assert(element != null);
                 // The row was inserted in our viewport, add it as a scrolling row
                 LoadScrollingSlot(slot, element, true /*updateSlotInformation*/);
             }
@@ -197,7 +196,6 @@ namespace Avalonia.Controls
             while (_recyclableRows.Count > 0)
             {
                 DataGridRow row = _recyclableRows.Pop();
-                Debug.Assert(row != null);
                 row.IsVisible = false;
                 Debug.Assert(!_fullyRecycledRows.Contains(row));
                 _fullyRecycledRows.Push(row);
@@ -206,7 +204,6 @@ namespace Avalonia.Controls
             while (_recyclableGroupHeaders.Count > 0)
             {
                 DataGridRowGroupHeader groupHeader = _recyclableGroupHeaders.Pop();
-                Debug.Assert(groupHeader != null);
                 groupHeader.IsVisible = false;
                 Debug.Assert(!_fullyRecycledGroupHeaders.Contains(groupHeader));
                 _fullyRecycledGroupHeaders.Push(groupHeader);
@@ -221,7 +218,7 @@ namespace Avalonia.Controls
             return _scrollingElements[GetCircularListIndex(slot, true /*wrap*/)];
         }
 
-        internal DataGridRow GetDisplayedRow(int rowIndex)
+        internal DataGridRow? GetDisplayedRow(int rowIndex)
         {
 
             return GetDisplayedElement(_owner.SlotFromRowIndex(rowIndex)) as DataGridRow;
@@ -233,7 +230,7 @@ namespace Avalonia.Controls
             return GetScrollingElements(null);
         }
 
-        internal IEnumerable<Control> GetScrollingElements(Predicate<object> filter)
+        internal IEnumerable<Control> GetScrollingElements(Predicate<object>? filter)
         {
             for (int i = 0; i < _scrollingElements.Count; i++)
             {
@@ -251,7 +248,7 @@ namespace Avalonia.Controls
             return GetScrollingElements(element => element is DataGridRow);
         }
 
-        internal DataGridRow GetUsedRow()
+        internal DataGridRow? GetUsedRow()
         {
             if (_recyclableRows.Count > 0)
             {

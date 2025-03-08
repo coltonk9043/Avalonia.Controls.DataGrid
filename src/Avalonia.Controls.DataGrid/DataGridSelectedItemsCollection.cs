@@ -3,6 +3,8 @@
 // Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
 // All other rights reserved.
 
+#nullable disable
+
 using System;
 using System.Diagnostics;
 using System.Collections.Generic;

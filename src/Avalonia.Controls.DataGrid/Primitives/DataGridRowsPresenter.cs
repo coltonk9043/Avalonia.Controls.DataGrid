@@ -22,20 +22,20 @@ namespace Avalonia.Controls.Primitives
 #endif
     sealed class DataGridRowsPresenter : Panel, IChildIndexProvider
     {
-        private EventHandler<ChildIndexChangedEventArgs> _childIndexChanged;
+        private EventHandler<ChildIndexChangedEventArgs>? _childIndexChanged;
 
         public DataGridRowsPresenter()
         {
             AddHandler(Gestures.ScrollGestureEvent, OnScrollGesture);
         }
 
-        internal DataGrid OwningGrid
+        internal DataGrid? OwningGrid
         {
             get;
             set;
         }
 
-        event EventHandler<ChildIndexChangedEventArgs> IChildIndexProvider.ChildIndexChanged
+        event EventHandler<ChildIndexChangedEventArgs>? IChildIndexProvider.ChildIndexChanged
         {
             add => _childIndexChanged += value;
             remove => _childIndexChanged -= value;
@@ -50,6 +50,12 @@ namespace Avalonia.Controls.Primitives
 
         bool IChildIndexProvider.TryGetTotalCount(out int count)
         {
+            if (OwningGrid is null)
+            {
+                count = 0;
+                return false;
+            }
+
             return OwningGrid.DataConnection.TryGetCount(false, true, out count);
         }
 
@@ -160,7 +166,7 @@ namespace Avalonia.Controls.Primitives
             double headerWidth = 0;
             foreach (Control element in OwningGrid.DisplayData.GetScrollingElements())
             {
-                DataGridRow row = element as DataGridRow;
+                DataGridRow? row = element as DataGridRow;
                 if (row != null)
                 {
                     if (invalidateRows)
@@ -192,9 +198,9 @@ namespace Avalonia.Controls.Primitives
             return new Size(totalCellsWidth + headerWidth, totalHeight);
         }
 
-        private void OnScrollGesture(object sender, ScrollGestureEventArgs e)
+        private void OnScrollGesture(object? sender, ScrollGestureEventArgs e)
         {
-            e.Handled = e.Handled || OwningGrid.UpdateScroll(-e.Delta);
+            e.Handled = e.Handled || (OwningGrid?.UpdateScroll(-e.Delta) ?? false);
         }
 
 #if DEBUG

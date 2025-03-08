@@ -98,7 +98,7 @@ namespace Avalonia.Controls
         /// </summary>
         /// <param name="obj">DataGridClipboardCellContent to compare.</param>
         /// <returns>True iff this and data are equal</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if(obj is DataGridClipboardCellContent content)
             {
@@ -156,7 +156,7 @@ namespace Avalonia.Controls
     class DataGridRowClipboardEventArgs : EventArgs
     {
 
-        private List<DataGridClipboardCellContent> _clipboardRowContent;
+        private List<DataGridClipboardCellContent>? _clipboardRowContent;
         private bool _isColumnHeadersRow;
         private object _item;
 

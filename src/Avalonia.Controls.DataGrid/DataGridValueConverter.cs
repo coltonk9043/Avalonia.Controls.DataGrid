@@ -17,15 +17,15 @@ namespace Avalonia.Controls
     {
         public static DataGridValueConverter Instance = new DataGridValueConverter();
 
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
             return DefaultValueConverter.Instance.Convert(value, targetType, parameter, culture);
         }
 
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
-            if (targetType != null && targetType.IsNullableType())
+            if (targetType.IsNullableType())
             {
                 var strValue = value as string;
 

@@ -36,12 +36,12 @@ namespace Avalonia.Controls.Primitives
             set { SetValue(ContentHeightProperty, value); }
         }
 
-        internal DataGridRow OwningRow
+        internal DataGridRow? OwningRow
         {
             get;
             set;
         }
-        private DataGrid OwningGrid => OwningRow?.OwningGrid;
+        private DataGrid? OwningGrid => OwningRow?.OwningGrid;
 
         public DataGridDetailsPresenter()
         {

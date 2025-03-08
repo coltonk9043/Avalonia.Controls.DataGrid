@@ -1,4 +1,6 @@
-﻿using Avalonia.Data;
+﻿#nullable disable
+
+using Avalonia.Data;
 using Avalonia.Reactive;
 using System;
 using System.Collections.Generic;

@@ -330,7 +330,7 @@ namespace Avalonia.Controls
         /// <param name="obj">Reference to an object for comparison.</param>
         /// <returns><c>true</c> if this DataGridLength instance has the same value 
         /// and unit type as oCompare.</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             DataGridLength? dataGridLength = obj as DataGridLength?;
             if (dataGridLength.HasValue)
@@ -374,7 +374,7 @@ namespace Avalonia.Controls
         /// <c>true</c> if this converter can convert from the provided type, 
         /// <c>false</c> otherwise.
         /// </returns>
-        public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
+        public override bool CanConvertFrom(ITypeDescriptorContext? context, Type sourceType)
         {
             // We can only handle strings, integral and floating types
             TypeCode tc = Type.GetTypeCode(sourceType);
@@ -407,7 +407,7 @@ namespace Avalonia.Controls
         /// <c>true</c> if this converter can convert to the provided type, 
         /// <c>false</c> otherwise.
         /// </returns>
-        public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)
+        public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)
         {
             return destinationType == typeof(string);
         }
@@ -428,7 +428,7 @@ namespace Avalonia.Controls
         /// <exception cref="NotSupportedException">
         /// A NotSupportedException is thrown if the example object is null.
         /// </exception>
-        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
+        public override object ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
         {
             // GridLengthConverter in WPF throws a NotSupportedException on a null value as well.
             if (value == null)
@@ -504,7 +504,7 @@ namespace Avalonia.Controls
         ///     Critical: calls InstanceDescriptor ctor which LinkDemands
         ///     PublicOK: can only make an InstanceDescriptor for DataGridLength, not an arbitrary class
         ///</SecurityNote> 
-        public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
+        public override object ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
         {
             if (destinationType == null)
             {

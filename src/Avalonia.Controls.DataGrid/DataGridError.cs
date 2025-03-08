@@ -85,7 +85,7 @@ namespace Avalonia.Controls
 
             public static ArgumentOutOfRangeException ValueMustBeBetween(string paramName, string valueName, object lowValue, bool lowInclusive, object highValue, bool highInclusive)
             {
-                string message = null;
+                string? message;
 
                 if (lowInclusive && highInclusive)
                 {
@@ -182,7 +182,7 @@ namespace Avalonia.Controls
             }
         }
 
-        private static string Format(string formatString, params object[] args)
+        private static string Format(string formatString, params object?[] args)
         {
             return String.Format(CultureInfo.CurrentCulture, formatString, args);
         }

@@ -42,7 +42,7 @@ namespace Avalonia.Controls.Utils
         /// <param name="collection">ValidationResults to search through.</param>
         /// <param name="target">ValidationResult to find.</param>
         /// <returns>Equal ValidationResult if found, null otherwise.</returns>
-        public static ValidationResult FindEqualValidationResult(this ICollection<ValidationResult> collection, ValidationResult target)
+        public static ValidationResult? FindEqualValidationResult(this ICollection<ValidationResult> collection, ValidationResult target)
         {
             foreach (ValidationResult oldValidationResult in collection)
             {
@@ -71,12 +71,12 @@ namespace Avalonia.Controls.Utils
             return null;
         }
 
-        public static bool IsValid(this ValidationResult result)
+        public static bool IsValid(this ValidationResult? result)
         {
             return result == null || result == ValidationResult.Success;
         }
 
-        public static IEnumerable<Exception> UnpackException(Exception exception)
+        public static IEnumerable<Exception> UnpackException(Exception? exception)
         {
             if (exception != null)
             {
@@ -90,7 +90,7 @@ namespace Avalonia.Controls.Utils
             return Array.Empty<Exception>();
         }
 
-        public static object UnpackDataValidationException(Exception exception)
+        public static object? UnpackDataValidationException(Exception? exception)
         {
             if (exception is DataValidationException dataValidationException)
             {

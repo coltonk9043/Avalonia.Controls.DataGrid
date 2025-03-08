@@ -31,7 +31,7 @@ namespace Avalonia.Controls
             set;
         }
 
-        public override bool Equals(object o)
+        public override bool Equals(object? o)
         {
             if (o is DataGridCellCoordinates dataGridCellCoordinates)
             {

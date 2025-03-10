@@ -58,6 +58,15 @@ namespace Avalonia.Controls
         Row = 1,
     }
 
+#if !DATAGRID_INTERNAL
+    public
+#endif
+    enum DataGridCellEditMode
+    {
+        Default = 0,
+        Immediate = 1,
+    }
+
     /// <summary>
     /// Determines whether the row/column headers are shown or not.
     /// </summary>

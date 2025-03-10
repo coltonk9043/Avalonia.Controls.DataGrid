@@ -631,6 +631,20 @@ namespace Avalonia.Controls
             set { SetAndRaise(SelectedItemProperty, ref _selectedItem, value); }
         }
 
+        public static readonly StyledProperty<DataGridCellEditMode> CellEditModeProperty =
+            AvaloniaProperty.Register<DataGrid, DataGridCellEditMode>(
+                nameof(CellEditMode),
+                defaultValue: DataGridCellEditMode.Default);
+
+        /// <summary>
+        /// Gets or sets the behaviour to put a cell into edit mode.
+        /// </summary>
+        public DataGridCellEditMode CellEditMode
+        {
+            get => GetValue(CellEditModeProperty);
+            set => SetValue(CellEditModeProperty, value);
+        }
+
         public static readonly StyledProperty<DataGridClipboardCopyMode> ClipboardCopyModeProperty =
             AvaloniaProperty.Register<DataGrid, DataGridClipboardCopyMode>(
                 nameof(ClipboardCopyMode),
@@ -5936,7 +5950,7 @@ namespace Avalonia.Controls
                 _noSelectionChangeCount++;
 
                 beginEdit = allowEdit &&
-                            CurrentSlot == slot &&
+                            (CellEditMode == DataGridCellEditMode.Immediate || CurrentSlot == slot) &&
                             columnIndex != -1 &&
                             (wasInEdit || CurrentColumnIndex == columnIndex) &&
                             !GetColumnEffectiveReadOnlyState(ColumnsItemsInternal[columnIndex]);
